@@ -1,0 +1,159 @@
+:root {
+  --bg: #141414;
+  --card: #1f1f1f;
+  --accent: #e50914;
+  --muted: #b3b3b3;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0,0,0,0.6);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* ★ FIXED MYFLIGX STYLE */
+.brand {
+    font-size: 48px;            /* BIG */
+    font-weight: 900;           /* VERY BOLD */
+    color: red;                 /* RED */
+    letter-spacing: 3px;        /* attractive spacing */
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.brand:hover {
+    color: #ff3333;             /* lighter red hover */
+    text-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
+}
+
+.search-form {
+  float: right;
+}
+.search-form input {
+  padding: 8px 10px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  outline: none;
+  width: 220px;
+}
+.search-form button {
+  padding: 8px 10px;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Hero banner */
+.hero {
+  height: 46vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(20,20,20,0.9) 70%);
+  padding: 30px;
+  width: 100%;
+}
+.hero-overlay h1 {
+  margin: 0 0 8px 0;
+  font-size: 36px;
+}
+.hero-overlay p {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* Movie row */
+.main-content {
+  padding: 24px 0 60px 0;
+}
+.row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.poster {
+  text-decoration: none;
+  color: white;
+  width: 180px;
+  flex: 0 0 auto;
+  transition: transform .18s ease;
+}
+.poster img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+.poster:hover {
+  transform: scale(1.06);
+}
+.poster-title {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Movie detail */
+.detail {
+  display: flex;
+  gap: 28px;
+  padding: 40px 0;
+}
+.detail-left { flex: 0 0 320px; }
+.detail-poster { width: 100%; border-radius: 6px; }
+.detail-right { flex: 1; }
+.muted { color: var(--muted); }
+
+/* Footer */
+.footer {
+  padding: 32px 0;
+  background: rgba(0,0,0,0.4);
+  text-align: center;
+  color: var(--muted);
+  margin-top: 40px;
+}
+
+/* small screens */
+@media (max-width: 720px) {
+  .hero-overlay h1 { font-size: 22px; }
+  .poster { width: 140px; }
+  .detail { flex-direction: column; }
+  .detail-left { width: 100%; }
+}

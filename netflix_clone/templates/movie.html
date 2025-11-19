@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ movie.title }} - MyFlix</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="brand"><a href="{{ url_for('home') }}">MyFlix</a></div>
+      <div class="spacer"></div>
+    </div>
+  </header>
+
+  <section class="detail container">
+    <div class="detail-left">
+      <img class="detail-poster"
+           src="{{ url_for('static', filename='images/' + movie['image']) }}"
+           alt="{{ movie.title }}">
+    </div>
+
+    <div class="detail-right">
+      <h1>{{ movie.title }} <span class="muted">({{ movie.year }})</span></h1>
+      <p class="muted">Genre: {{ movie.genre }}</p>
+      <p>{{ movie.desc }}</p>
+      <a class="btn" href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>MyFlix • Demo project • Flask</p>
+    </div>
+  </footer>
+</body>
+</html>
